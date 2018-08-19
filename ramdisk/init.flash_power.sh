@@ -67,8 +67,10 @@ write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
 write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
 
 # Input boost configuration
-write /sys/module/cpu_boost/parameters/input_boost_freq "0:1228800 1:0 2:1036800 3:0"
-write /sys/module/cpu_boost/parameters/input_boost_ms 100
+write /sys/module/cpu_boost/parameters/input_boost_freq "1286400 1363200"
+write /sys/module/cpu_boost/parameters/input_boost_ms 90
+write /sys/module/cpu_boost/parameters/input_boost_freq_s2 "1132800 1209600"
+write /sys/module/cpu_boost/parameters/input_boost_ms_s2 150
 write /sys/module/msm_performance/parameters/cpu_min_freq "0:307200 1:307200 2:307200 3:307200"
 
 # Setting b.L scheduler parameters
