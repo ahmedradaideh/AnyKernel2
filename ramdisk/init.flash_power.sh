@@ -1,21 +1,6 @@
 #!/system/bin/sh
 
-################################################################################
-# helper functions to allow Android init like script
-
-function write() {
-    echo -n $2 > $1
-}
-
-function copy() {
-    cat $1 > $2
-}
-
-################################################################################
-
-{
-
-sleep 10
+write() { echo "$2" > "$1"; }
 
 # Disable thermal hotplug to switch governor
 write /sys/module/msm_thermal/core_control/enabled 0
@@ -82,5 +67,3 @@ write /proc/sys/kernel/sched_freq_inc_notify 400000
 write /proc/sys/kernel/sched_freq_dec_notify 400000
 write /proc/sys/kernel/sched_spill_nr_run 3
 write /proc/sys/kernel/sched_init_task_load 100
-
-}&
